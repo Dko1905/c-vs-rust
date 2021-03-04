@@ -1,0 +1,9 @@
+[package]
+name = "cargo-comment-remover"
+version = "0.1.0"
+authors = ["Daniel Florescu <Daniel.florescu1905@protonmail.ch>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
