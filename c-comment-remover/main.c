@@ -41,6 +41,7 @@ int main() {
 					state = 4;
 				} else {
 					buffer[write++] = '/';
+					buffer[write++] = ch;
 					state = 0;
 				}
 			} else if (state == 2) {
@@ -53,7 +54,7 @@ int main() {
 					continue;
 				} else {
 					state = 2;
-					}
+				}
 			} else if (state == 4) {
 				if (ch == '\n') {
 					state = 0;
