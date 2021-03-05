@@ -23,7 +23,7 @@ fn main() {
 			if ch == b'/' {
 				state = 1;
 			} else {
-				write!(&mut fout, "{}", ch as char).expect("Failed to write");
+				fout.write(&[ch]).expect("Failed to write");
 			}
 		} else if state == 1 {
 			if ch == b'*' {
@@ -31,7 +31,7 @@ fn main() {
 			} else if ch == b'/' {
 				state = 4;
 			} else {
-				write!(&mut fout, "/{}", ch as char).expect("Failed to write");
+				fout.write(&[b'/', ch]).expect("Failed to write");
 				state = 0;
 			}
 		} else if state == 2 {
@@ -48,7 +48,7 @@ fn main() {
 		} else if state == 4 {
 			if ch == b'\n' {
 				state = 0;
-				write!(&mut fout, "\n").expect("Failed to write");
+				fout.write(&[b'\n']).expect("Failed to write");
 			}
 		}
 	}
