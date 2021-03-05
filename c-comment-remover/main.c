@@ -25,6 +25,7 @@ int main() {
 	buffer[BUFFER_SIZE - 1] = '\0';
 
 	while ((read = fread(buffer, 1, BUFFER_SIZE - 1, stdin)) > 0) {
+		write = 0;
 		for (n = 0; n < read; ++n) {
 			ch = buffer[n];
 			if (state == 0) {
