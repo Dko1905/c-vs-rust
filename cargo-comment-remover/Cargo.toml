@@ -9,3 +9,5 @@ edition = "2018"
 [dependencies]
 utf8-chars = "1.0.0"
 
+#[profile.release]
+#debug = true

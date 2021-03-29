@@ -21,7 +21,8 @@ int main() {
 	 */
 	unsigned int state = 0;
 	size_t n = 0, read = 0, write = 0;
-	unsigned char buffer[BUFFER_SIZE], ch = 0;
+	unsigned char *buffer, ch = 0;
+	buffer = calloc(BUFFER_SIZE, 1);
 	buffer[BUFFER_SIZE - 1] = '\0';
 
 	while ((read = fread(buffer, 1, BUFFER_SIZE - 1, stdin)) > 0) {
